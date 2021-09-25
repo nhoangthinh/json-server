@@ -1,0 +1,48 @@
+
+@baseUrl=http://localhost:3000/api
+@resourceName=products
+
+# @name get
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filter
+GET {{baseUrl}}/{{resourceName}}?name_like=ed
+
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+
+###
+
+# @name add
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "categoryId": "0q6zm6rkl",
+    "name": "Awesome Plastic Ball",
+    "price": 79,
+    "color": "cyan",
+    "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+    "image": "http://placeimg.com/640/480"
+}
+
+###
+
+# @name patch
+PATCH {{baseUrl}}/{{resourceName}}/RYSI4Pz
+Content-Type: application/json
+
+{
+    "name": "Awesome Plastic Balled",
+    "price": 80,
+    "color": "brown"
+}
+
+###
+
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/2
